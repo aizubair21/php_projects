@@ -83,16 +83,19 @@ $result = mysqli_query($conn_to_db, $get_user);
   <div style=" width:50%; margin: 0 auto;">
 <?php
  while ($row = mysqli_fetch_assoc($result)) {
+    $idn = $row["id"];
     $name = $row["name"];
     $phone = $row["phone"];
     $email = $row["email"];}?>
-     <input type="text" name="first_name" id="first_name" value="<?php '.$row["name"].'?>" autofocus> <br>
+      <input type="number" name="slId" id="slId" value="<?php echo "$idn"?>">
 
-      <input type="number" name="number" id="last_name" value="<?php '.$phone.'?>" maxlength="11"> <br>
+     <input type="text" name="first_name" id="first_name" value="<?php echo "$name"?>" autofocus> <br>
 
-      <input type="email" name="u_email" id="u_email" value="<?php '.$email.'?>" autocomplete="on"> <br>
+      <input type="number" name="number" id="last_name" value="<?php echo "$phone" ?>" maxlength="11"> <br>
 
-   <button updateId="<?php echo "$id"?>" type="submit" name="update" style="padding: 10px 25px;"> GO  </button>
+      <input type="email" name="u_email" id="u_email" value="<?php echo "$email"?>" autocomplete="on"> <br>
+
+   <button type="submit" name="update" style="padding: 10px 25px;"> GO  </button>
   </div>
 </fieldset>
 </form>

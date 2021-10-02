@@ -53,7 +53,7 @@ echo'<br>';
 
 
 //send data to server 
-if (isset($_GET["submit"])) {
+
 $sql_to_send_data = "INSERT INTO user_info(name, phone, email) VALUE('$u_name','$u_p_number', '$u_email')";
 
 if (mysqli_query($conn_to_db, $sql_to_send_data) === true) {
@@ -65,4 +65,3 @@ if (mysqli_query($conn_to_db, $sql_to_send_data) === true) {
 
 } else { 
   echo "have an error: " .$conn_to_db->error;};
-}
