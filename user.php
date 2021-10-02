@@ -66,4 +66,3 @@ if (mysqli_query($conn_to_db, $sql_to_send_data) === true) {
 } else { 
   echo "have an error: " .$conn_to_db->error;};
 }
-

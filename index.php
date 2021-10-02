@@ -237,7 +237,7 @@ this form data submitted to server..
       <td>' .$row["phone"]. '</td>
       <td>' .$row["email"]. '</td>
       <td>
-      <button style="backgound-color:blue; color:black; padding:5px 10px"> <a href="update.php?updateId='.$row["id"].'" method="GET" style="text-decoration:none"> Update </a> </button>
+      <button style="backgound-color:blue; color:black; padding:5px 10px" > <a href="update.php?updatId='.$row["id"].'" method="GET" style="text-decoration:none"> Update </a> </button>
       <button style="backgound-color:blue; color:black; padding:5px 10px" > <a href="delet.php?deletId='.$row["id"].'" method="GET" style="text-decoration:none"> Delet </a> </button>
       </td>
     </tr>';

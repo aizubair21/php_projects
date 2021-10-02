@@ -31,6 +31,14 @@ echo'<br>';
 
   # code...
 
+$id = $_GET['updatId'];
+echo $id ;
+
+$get_user = "SELECT * FROM user_info WHERE id=$id";
+$result = mysqli_query($conn_to_db, $get_user);
+ 
+
+
 
 
 ?>
@@ -69,18 +77,22 @@ echo'<br>';
 </style>
 </head>
 <body>
-<form action="user.php" method="GET" style="width: 70%; margin: 50px auto;" >
+<form action="final_update.php" method="GET" style="width: 70%; margin: 50px auto;" >
 <fieldset >
   <legend>Data submitted to surver: </legend>
   <div style=" width:50%; margin: 0 auto;">
+<?php
+ while ($row = mysqli_fetch_assoc($result)) {
+    $name = $row["name"];
+    $phone = $row["phone"];
+    $email = $row["email"];}?>
+     <input type="text" name="first_name" id="first_name" value="<?php '.$row["name"].'?>" autofocus> <br>
 
-     <input type="text" name="first_name" id="first_name" placeholder="Your full Name: " autofocus> <br>
+      <input type="number" name="number" id="last_name" value="<?php '.$phone.'?>" maxlength="11"> <br>
 
-      <input type="number" name="number" id="last_name" placeholder=" 01798-667580" maxlength="11" pattern="{0-9{[5]-{0-9}[6]"> <br>
+      <input type="email" name="u_email" id="u_email" value="<?php '.$email.'?>" autocomplete="on"> <br>
 
-      <input type="email" name="u_email" id="u_email" placeholder="Your email: " autocomplete="on"> <br>
-  
-    <input type="submit" name="update" value="Go">
+   <button updateId="<?php echo "$id"?>" type="submit" name="update" style="padding: 10px 25px;"> GO  </button>
   </div>
 </fieldset>
 </form>
