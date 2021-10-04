@@ -37,36 +37,36 @@
 <?php
 
 
+// include("connection.php");
+
+// $host_name = "localhost";
+// $user_name  = "root";
+// $password = "";
+// $db_name = "myDb";
 
 
-$host_name = "localhost";
-$user_name  = "root";
-$password = "";
-$db_name = "myDb";
 
+// $conn_to_server = mysqli_connect($host_name, $user_name, $password);
+// if ($conn_to_server) {
+//   # code...
+//   echo "server connected ";
+// } else { 
+//   echo "provlem to connect server" .mysqli_connect_error();
 
+// };
+// echo "<br>";
 
-$conn_to_server = mysqli_connect($host_name, $user_name, $password);
-if ($conn_to_server) {
-  # code...
-  echo "server connected ";
-} else { 
-  echo "provlem to connect server" .mysqli_connect_error();
+// //connect to database 
 
-};
-echo "<br>";
+// $conn_to_db = mysqli_connect($host_name,$user_name,$password,$db_name);
+// if ($conn_to_db) {
+//   # code...
+//   echo "Db connected " ;
+// } else {
+//   echo "Here an provlem to connect to database" .mysqli_connect_error();
+// };
 
-//connect to database 
-
-$conn_to_db = mysqli_connect($host_name,$user_name,$password,$db_name);
-if ($conn_to_db) {
-  # code...
-  echo "Db connected " ;
-} else {
-  echo "Here an provlem to connect to database" .mysqli_connect_error();
-};
-
-echo'<br>';
+// echo'<br>';
 
 
 
@@ -81,11 +81,11 @@ echo'<br>';
 
 //CATCH FORM DATA BR SELF
 
-$first_number = $_GET['first_number'] = 20;
-$second_nuber = $_GET['second_number'] = 22;
-$last_number = $_GET["last_number"] = 25;
+$first_number = $_GET['first_number'];
+$second_nuber = $_GET['second_number'];
+$last_number = $_GET["last_number"];
 
-$cgpa_number = $_GET["cgpa_number"] = 75;
+$cgpa_number = $_GET["cgpa_number"];
 
 // make number input to an array, that it much easier to comp...
 $arrar_contain_number = [
@@ -201,54 +201,11 @@ this form data submitted to server..
 <!--
   Add contact button bellow
 -->
-<div class="">
-  <button style="background-color: blue; padding:5px 10px; border:none"> <a href="add_contact.php" style="color: white; font-size:15px;
-  text-decoration:none;">Add contact</a> </button>
+
+
+<div>
+  <button style="padding: 10px 25px;"><a href="contact.php" style="font-size: 15px; text-decoration:none; color:black;">  see contact page</a></button>
 </div>
-<table >
-
-<style>
-  th, td {
-    padding: 5px 15px;
-  }
-</style>
-
-  <thead>
-    <tr >
-      <th style="border: 1px solid black; ">Id</th>
-      <th style="border: 1px solid black; ">Nmae</th>
-      <th style="border: 1px solid black; ">Phone</th>
-      <th style="border: 1px solid black; ">E-manil</th>
-      <th style="border: 1px solid black; ">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-   <?php
-
-
-   $get_data = "SELECT * FROM user_info";
-   $result = mysqli_query($conn_to_db,$get_data);
-
-   while ($row = mysqli_fetch_assoc($result)) {
-    echo '
-    <tr>
-      <td>' .$row["id"]. '</td>
-      <td>' .$row["name"]. '</td>
-      <td>' .$row["phone"]. '</td>
-      <td>' .$row["email"]. '</td>
-      <td>
-      <button style="backgound-color:blue; color:black; padding:5px 10px" > <a href="update.php?updatId='.$row["id"].'" method="GET" style="text-decoration:none"> Update </a> </button>
-      <button style="backgound-color:blue; color:black; padding:5px 10px" > <a href="delet.php?deletId='.$row["id"].'" method="GET" style="text-decoration:none"> Delet </a> </button>
-      </td>
-    </tr>';
-  }
-
-
-   ?>
-  </tbody>
-</table>
-
-
 
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="get" style="margin:auto;">
