@@ -18,12 +18,17 @@
   </style>
 </head>
 <body>
+ <form action="data.php" method="GET">
+
   <input type="text" name="test_name" id="test_name" placeholder="<?php Echo "text input ..."; ?>" onkeyup="testInput(this.value)">
+
   <input type="submit" value="test"  name="submit">
 
   <div>
     <p id="result"></p>
   </div>
+
+ </form>
 </body>
 
 <script>
@@ -42,19 +47,21 @@
 
 
 <?php
-include("connection.php");
-
-$intt = 5;
 
 ;
-echo ("this is $intt hay, i got it");
+for ($z=1; $z <= 10 ; $z++) { 
+ echo "<div style='border: 1px solid gray; padding:5px; display:inline-block; margin:2px'>";
+  for ($y=1; $y <=10 ; $y++) { 
+    echo "$z x $y = " .$z*$y. "<br>";
+  }
+echo "</div>";
+}
 
 
-echo '<script type="text/javascript">
-      function testInput (key) {
-       document.querySelector("#result").innerHTML = key;
-      }
-    </script>';
+
+echo "<br>";
+
+
 
 $address = [
   "district"=>"bhola",
