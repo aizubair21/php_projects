@@ -1,5 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> test JS in PHP </title>
+  <style>
+
+    body {
+      margin: 20px ;
+    }
+    input {
+      padding: 10px;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" name="test_name" id="test_name" placeholder="<?php Echo "text input ..."; ?>" onkeyup="testInput(this.value)">
+  <input type="submit" value="test"  name="submit">
+
+  <div>
+    <p id="result"></p>
+  </div>
+</body>
+
+<script>
+  // function testInput(key) {
+  //   document.querySelector("#result").innerHTML = key ;
+  // }
+</script>
+</html>
+<br>
+
+
+
+
+
+
+
+
 <?php
 include("connection.php");
+
+$intt = 5;
+
+;
+echo ("this is $intt hay, i got it");
+
+
+echo '<script type="text/javascript">
+      function testInput (key) {
+       document.querySelector("#result").innerHTML = key;
+      }
+    </script>';
 
 $address = [
   "district"=>"bhola",
@@ -16,13 +71,22 @@ $info = array(
 );
 
 $indexed_array = ["zubair","rayhan","kamal","king","pondith","icche nodi","mora manus","otithi pakhi","nijun","thithi"];
-
-
+// $indexed_number_array = [1,2,3,4,5,6,7,8,9,10,11];
+// shuffle($indexed_number_array);
+// show_array_fine($indexed_number_array);
+echo "<br>";
 #show an arry by one by one with idex
+
+
+
+
+
+
+echo'<br>';
 function show_array_fine ($arr) {
   for ($i=0; $i <= count($arr) ; $i++) { 
     # code...
-  
+    sort($arr, 5);
     print_r(" $i : $arr[$i] <br>");
   };
   
@@ -51,16 +115,13 @@ function delete_item_from_array ($arr, $index) {
   return $temp_array;
 }
 echo "<br>";
+  
 show_array_fine(delete_item_from_array($indexed_array, 6));
-;
-
+  
 echo "<br>";
 $student = [
   $address, $info,
 ];
-;
-
-var_dump($student[0]["word_no"]);
 echo "<br>";
 //
 function if_exists ($ar, $val) {
@@ -79,6 +140,5 @@ function if_exists ($ar, $val) {
 };
 
 echo "<br>";
-if_exists($info,"f_name");
 // echo  (array_key_exists("village",$address));
 

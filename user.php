@@ -61,7 +61,7 @@ if (mysqli_query($conn_to_db, $sql_to_send_data) === true) {
   echo'<br>';
   $last_id = $conn_to_db->insert_id;
   // echo "Your id is: $last_id";
-  header("location:index.php");
+  header("location:contact.php");
 
 } else { 
   echo "have an error: " .$conn_to_db->error;};

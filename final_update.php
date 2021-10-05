@@ -14,7 +14,7 @@ include("connection.php");
 
  if (mysqli_query($conn_to_db, $update_user)) {
   echo "done ";
-  header("location:index.php");
+  header("location:contact.php");
   } else {
     echo "have an error" .mysqli_error($conn_to_db);
   }

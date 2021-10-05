@@ -33,7 +33,7 @@ echo'<br>';
 $delet_data = "DELETE FROM user_info WHERE id=$id";
 
 if (mysqli_query($conn_to_db, $delet_data)) {
-  header("location:index.php");
+  header("location:contact.php");
 } else {
   echo "have an error" .mysqli_error($conn_to_db);
 }
