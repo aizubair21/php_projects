@@ -108,14 +108,14 @@ transform: translate(-50%, -50%); */
   content: "";
   position: absolute;
   top: 0;
-  left: -22px;
+  left: -30px;
   width: 1px;
   height: 1px;
   background-color: white;
-  border-width: 10px;
+  border-width: 8px;
   border-style: solid;
   border-color: gray;
-  border-left: 10px solid white;
+  border-left: 8px solid white;
 }
 
 
@@ -125,15 +125,61 @@ transform: translate(-50%, -50%); */
   </head>
 
   <body>
-    <ul class="" style="background-color: gray; width:250px">
-      <li >
-         <span class="accordion caret-down">Zubair</span>
-          <ul class="panel" style="max-height: 200px;" >
-            <li>Name :</li>
-            <li>class :</li>
-            <li>ID :</li>
-            <li>
-                <span class="accordion">P_addr</span> :
+
+    <ul style="background-color: gray; width:250px;">
+      <li>
+        <span class="accordion caret-down" >Student</span>
+        <ul class="panel" style="max-height: 100%;">
+          <li >
+            <span class="accordion caret-down">Zubair</span>
+              <ul class="panel" style="max-height: 100%;">
+                <li>Name : </li>
+                <li>class :</li>
+                <li>ID :</li>
+                <li>
+                  <span class="accordion">Address</span>
+                  <ul class="panel">
+                    <li>
+                      <span class="accordion">P_addr</span> :
+                      <ul class="panel">
+                        <li>Dist :</li>
+                        <li>Sub_dist :</li>
+                        <li>Post :</li>
+                        <li>Village :</li>
+                        <li>Post Code :</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <span class="accordion">Current_addr</span>
+                      <ul class="panel">
+                        <li>Dist :</li>
+                        <li>Sub_dist :</li>
+                        <li>Post :</li>
+                        <li>Village :</li>
+                        <li>Post Code :</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <span class="accordion">Student Quary</span>
+                  <ul class="panel">
+                    <li>Academic</li>
+                    <li>Result</li>
+                    <li></li>
+                  </ul>
+                </li>
+              </ul>
+          </li>
+          <li > 
+            <span class="accordion">Rayhan</span>
+            <ul class="panel">
+              <li>Name: </li>
+              <li> Class :</li>
+              <li> ID :</li>
+              <li>
+                <span class="accordion">P_addr</span>
                 <ul class="panel">
                   <li>Dist :</li>
                   <li>Sub_dist :</li>
@@ -141,29 +187,25 @@ transform: translate(-50%, -50%); */
                   <li>Village :</li>
                   <li>Post Code :</li>
                 </ul>
-            </li>
-          </ul>
-      </li>
-      <li > 
-        <span class="accordion">Rayhan</span>
-        <ul class="panel">
-          <li>Name: </li>
-          <li> Class :</li>
-          <li> ID :</li>
-          <li>
-            <span class="accordion">P_addr</span>
-            <ul class="panel">
-              <li>Dist :</li>
-              <li>Sub_dist :</li>
-              <li>Post :</li>
-              <li>Village :</li>
-              <li>Post Code :</li>
+              </li>
+
+              <li>
+                <span class="accordion">C_addr</span>
+                <ul class="panel">
+                  <li>Dist :</li>
+                  <li>Sub_dist :</li>
+                  <li>Post :</li>
+                  <li>Village :</li>
+                  <li>Post Code :</li>
+                </ul>
+              </li>
             </ul>
           </li>
         </ul>
+
       </li>
     </ul>
-
+    
 
 
 <br>
@@ -207,10 +249,10 @@ transform: translate(-50%, -50%); */
           
           console.log(panel);
           this.classList.toggle("caret-down");
-          if (panel.style.maxHeight == 200+"px") {
+          if (panel.style.maxHeight) {
             panel.style.maxHeight = null;
           } else {
-            panel.style.maxHeight = panel.maxHeight = 200+"px";
+            panel.style.maxHeight = panel.maxHeight = 100+"%";
             
           }
 
