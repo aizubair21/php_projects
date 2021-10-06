@@ -150,10 +150,16 @@ echo '
 }
 
 .main_h::before {
-  content: "\25B6";
+  /* content: "\25B8"; */
+  content: "\229E";
   color: black;
   display: inline-block;
   margin-right: 6px;
+}
+.caret-down::before {
+  content: "\229F";
+  color: green;
+
 }
 
 .child {
@@ -162,37 +168,36 @@ echo '
 
 .active {
   display: block;
+  animation: all linear .5s;
 }
     </style>
   </head>
 
   <body>
     <ul style="background-color: gray; width:250px">
-      <li class="main_h" > <span>Zubair</span>
+      <li  > <span class="main_h">Zubair</span>
         <ul class="child">
           <li>Name :</li>
           <li>class :</li>
           <li>ID :</li>
-           <li>
-             <div class="main_h">
-              <span >P_addr</span> :
-              <ol class="child">
+           <li >
+              <span class="main_h">P_addr</span> :
+              <ul class="child">
                 <li>Dist :</li>
                 <li>Sub_dist :</li>
                 <li>Post :</li>
                 <li>Village :</li>
                 <li>Post Code :</li>
-              </ol>
-             </div>
+              </ul>
            </li>
         </ul>
       </li>
-      <li class="main_h"> <span>Rayhan</span>
+      <li > <span class="main_h">Rayhan</span>
         <ul class="child">
           <li>Name: </li>
           <li> Class :</li>
           <li> ID :</li>
-          <li class="main_h"> <span>P_addr</span>
+          <li > <span class="main_h">P_addr</span>
             <ol class="child">
               <li>Dist :</li>
               <li>Sub_dist :</li>
@@ -208,32 +213,18 @@ echo '
 
   <script>
 
-
-  $(()=>{
-   var main = $(".main_h");
-    var i;
-    for (i = 0; i < main.length ; i++) {
-      main[i].addEventListener("click", function () {
-        // this.sibligns(".child").toggle("active");
-        console.log(this);
-        
-
-      });
-      
-    }
-  });
     //js gone here
-    // var toggler = document.getElementsByClassName("main_h");
-    // var i;
+    var toggler = document.getElementsByClassName("main_h");
+    var i;
 
-    // for (i = 0; i < toggler.length; i++) {
-    //   toggler[i].addEventListener("click", function() {
-    //     this.querySelector(".child").classList.toggle("active");
-    //     this.classList.toggle("caret-down");
-    //     console.log(this);
+    for (i = 0; i < toggler.length; i++) {
+      toggler[i].addEventListener("click", function() {
+        this.parentElement.querySelector(".child").classList.toggle("active");
+        this.classList.toggle("caret-down");
+        // console.log(this);
         
-    //   });
-    // }
+      });
+    }
 
   </script>
   </html>
