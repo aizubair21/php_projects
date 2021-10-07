@@ -82,6 +82,7 @@ transform: translate(-50%, -50%); */
    padding: 5px;
    margin: 5px 2px;
    color: green;
+   font-size: 15px;
   /* border: 1px solid rgb(55, 214, 95); */
 }
 
@@ -98,6 +99,7 @@ transform: translate(-50%, -50%); */
   transition: max-height 0.2s ease-out;
   border-left: 1px solid white;
   position: relative;
+  font-size: 10px;
 
 }
 .panel > li {
@@ -133,30 +135,30 @@ transform: translate(-50%, -50%); */
           <li >
             <span class="accordion caret-down">Zubair</span>
               <ul class="panel" style="max-height: 100%;">
-                <li>Name : </li>
-                <li>class :</li>
-                <li>ID :</li>
+                <li>Name : zubair</li>
+                <li>class : inter 1st</li>
+                <li>ID : ABC 123</li>
                 <li>
                   <span class="accordion">Address</span>
                   <ul class="panel">
                     <li>
                       <span class="accordion">P_addr</span> :
                       <ul class="panel">
-                        <li>Dist :</li>
-                        <li>Sub_dist :</li>
-                        <li>Post :</li>
-                        <li>Village :</li>
-                        <li>Post Code :</li>
+                        <li>Dist : Kushtia</li>
+                        <li>Sub_dist : shoilkupa</li>
+                        <li>Post : shoilkupa</li>
+                        <li>Village : modhukhali</li>
+                        <li>Post Code : 1540</li>
                       </ul>
                     </li>
                     <li>
                       <span class="accordion">Current_addr</span>
                       <ul class="panel">
-                        <li>Dist :</li>
-                        <li>Sub_dist :</li>
-                        <li>Post :</li>
-                        <li>Village :</li>
-                        <li>Post Code :</li>
+                        <li>Dist : Bhola</li>
+                        <li>Sub_dist : Lalmohan</li>
+                        <li>Post : Lord Hardinge </li>
+                        <li>Village : Lord Hardinge</li>
+                        <li>Post Code : 2540</li>
                       </ul>
                     </li>
                   </ul>
@@ -165,8 +167,8 @@ transform: translate(-50%, -50%); */
                 <li>
                   <span class="accordion">Student Quary</span>
                   <ul class="panel">
-                    <li>Academic</li>
-                    <li>Result</li>
+                    <li>Academic : Vigorous</li>
+                    <li>Result : Pass</li>
                     <li></li>
                   </ul>
                 </li>
@@ -175,25 +177,25 @@ transform: translate(-50%, -50%); */
           <li > 
             <span class="accordion">Rayhan</span>
             <ul class="panel">
-              <li>Name: </li>
-              <li> Class :</li>
-              <li> ID :</li>
+              <li>Name: Rayhan</li>
+              <li> Class : inter 2nd </li>
+              <li> ID : ABC234</li>
               <li>
                 <span class="accordion">P_addr</span>
                 <ul class="panel">
-                  <li>Dist :</li>
-                  <li>Sub_dist :</li>
-                  <li>Post :</li>
-                  <li>Village :</li>
-                  <li>Post Code :</li>
+                  <li>Dist : Jhenidhah</li>
+                  <li>Sub_dist : shoilkupa</li>
+                  <li>Post : sheikhpara</li>
+                  <li>Village : modhukhali</li>
+                  <li>Post Code : 1540</li>
                 </ul>
               </li>
 
               <li>
                 <span class="accordion">C_addr</span>
                 <ul class="panel">
-                  <li>Dist :</li>
-                  <li>Sub_dist :</li>
+                  <li>Dist : Pabna</li>
+                  <li>Sub_dist : </li>
                   <li>Post :</li>
                   <li>Village :</li>
                   <li>Post Code :</li>

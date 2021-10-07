@@ -63,6 +63,8 @@
     // // echo'<br>';
 
 
+
+      //multidimentional associated array !
     $student_into = [
       "zubair" => [
         "name"=>"zubair",
@@ -118,61 +120,88 @@
 
 ; 
 
+
+//loop througn array 
+
+foreach ($student_into as $key => $students) {
+
+  ["name" => $name, "class" => $class, "id" => $id,"address" => $address, "student_query" => $student_query,] = $students;
+
+
+  echo "<pre>";
+ //  print_r($address);
+  echo "<pre>";
+  echo "<br>";
+
+   foreach ($address as $addr_value) {
+     //get all address array elemt and set to a variable
+    ["district" => $p_district, "sub_dist" => $p_sub_district , "post" => $p_post, "village" => $p_village , "post_code" => $p_ppost_code, "district" => $c_district, "sub_dist" => $c_sub_district , "post" => $c_post, "village" => $c_village , "post_code" => $c_ppost_code,] = $addr_value;
+   
+   }
+
+
+   foreach ($student_query as $student_query_element) {
+     ["academic" => $comment, "result" => $result,] = $student_query_element;
+   }
+
+ 
+  echo "<pre>";
+   // print_r($student_query["academic"]);
+  echo "<pre>";
+
+//make a table to print array element 
 echo '
-    <table border="1">
+<style>
+   th,td {
+     font-size: 15px;
+     text-wrap: wrap;
+     padding: 2px;
+   }
+</style>
+    <table border="1" style="text-align:center; border-collapse: collapse">
       <tr>
         <th>Name</th>
         <th>Class</th>
         <th>ID</th>
-        <th>Address
-          <table border="1">
-            <tr>
-              <th>Dist</th>
-              <th>Sub_Dist</th>
-              <th>Post</th>
-              <th>Village</th>
-              <th>Post_Code</th>
-            </tr>
-            <tr>
-
-            </tr>
-          </table>
-        </th>
-        <th> Student Querry
-          <table border="1">
-            <tr>
-              <th>Academic</th>
-              <th>Result</th>
-            </tr>
-          </table>
-        </th>
-      </tr>';
-       foreach ($student_into as $students) {
-          print_r($students);
-      echo '
-      <tr>
-        <th>'.$students["name"].'</th>
-        <th>'.$students["class"].'</th>
-        <th>'.$students["id"].'</th>
         <th>
-          <table border="1">
+          <table border="1" style="border-collapse: collapse">
+            <tr>present Address</tr>
             <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-            <tr>
-
+              <th style="width:20%">District</th>
+              <th style="width:20%">Sub_District</th>
+              <th style="width:20%">Post Name</th>
+              <th style="width:20%">Village </th>
+              <th style="width:20%">Post_Code</th>
             </tr>
           </table>
         </th>
-        <th>  
-          <table border="1">
+        <th> Query
+          <table>
+          <th>Academic</th>
+          <th>Result</th>
+          </table>
+        </th>
+      </tr>
+      <tr>
+        <td>'.$name.'</td>
+        <td>'.$class.'</td>
+        <td>'.$id.'</td>
+        <td>
+          <table border="1" style="border-collapse: collapse; text-align: center">
             <tr>
-              <th></th>
-              <th></th>
+              <td style="width:20%">'.$p_district.'</td>
+              <td style="width:20%">'.$p_sub_district.'</td>
+              <td style="width:20%">'.$p_post.'</td>
+              <td style="width:20%">'.$p_village.'</td>
+              <td style="width:20%">'.$p_ppost_code.'</td>
+            </tr>
+          </table>
+        </td>
+        <td>  
+          <table border="1" style="border-collapse: collapse">
+            <tr>
+              <td >'.$student_query["academic"].'</td>
+              <td style="width:100%">'.$student_query["result"].'</td>
             </tr>
           </table>
         </th>
@@ -181,5 +210,10 @@ echo '
       };
       echo '</table>';
     // print_r($input_name);
-    
+  
+  
+
+  
+  
+
   ?>
