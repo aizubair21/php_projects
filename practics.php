@@ -127,7 +127,7 @@ transform: translate(-50%, -50%); */
   </head>
 
   <body>
-
+  <h3> How to design array. </h3>
     <ul style="background-color: gray; width:250px;">
       <li>
         <span class="accordion caret-down" >Student</span>
