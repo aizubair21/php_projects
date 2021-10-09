@@ -47,3 +47,31 @@ function delete_item_from_array ($arr, $index) {
     return $index ."not found in array";
   };
 };
+
+function min_max ($arr ){
+  $str_item = [];
+  $str_len  = '';
+  $minimun_value = 0;
+  $maximun_value = 0;
+  for ($a=0; $a <count($arr) ; $a++) { 
+    $str_len = strlen($arr[$a]);
+      array_push($str_item, $str_len);
+  }
+
+  // print_r($str_item);
+
+  // get minimum and manimun value, it contains string number whitch is more big or less
+  $min = min($str_item);
+  $max = max($str_item);
+
+
+  //get minimun and maximun index and then get min and max value from trageted arry;
+  $maximun_value = $arr[array_search($max,$str_item)];
+  $minimun_value = $arr[array_search($min, $str_item)];
+ 
+  $value = [ $minimun_value, $maximun_value] ;
+  var_dump($value);
+  return $value;
+
+
+};

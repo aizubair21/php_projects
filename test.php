@@ -49,13 +49,15 @@
 <?php
 
 ;
-for ($z=1; $z <= 10 ; $z++) { 
- echo "<div style='border: 1px solid gray; padding:5px; display:inline-block; margin:2px'>";
-  for ($y=1; $y <=10 ; $y++) { 
-    echo "$z x $y = " .$z*$y. "<br>";
-  }
-echo "</div>";
-}
+
+// for ($z=1; $z <= 10 ; $z++) { 
+//  echo "<div style='border: 1px solid gray; padding:5px; display:inline-block; margin:2px'>";
+//   for ($y=1; $y <=10 ; $y++) { 
+//     echo "$z x $y = " .$z*$y. "<br>";
+//   }
+
+// echo "</div>";
+// }
 
 
 
@@ -77,7 +79,7 @@ $info = array(
   "m_name"=>"romana tabassum",
 );
 
-$indexed_array = ["zubair","rayhan","kamal","king","pondith","icche nodi","mora manus","otithi pakhi","nijun","thithi"];
+$indexed_array = ["zubair","rayhan","kamal","king","pondith","icche" ,"nodi","mora_manus","otithi_pakhi","nijun","thithi","amar"];
 // $indexed_number_array = [1,2,3,4,5,6,7,8,9,10,11];
 // shuffle($indexed_number_array);
 // show_array_fine($indexed_number_array);
@@ -140,19 +142,51 @@ echo "<br>";
 echo "<br>";
 // echo  (array_key_exists("village",$address));
 
-include("custom_function.php");
+// include("custom_function.php");
 
 echo "hello ";
 $number_array = [1,2,3,4,5,6,7,8,9];
-show_array_item($number_array);
-echo'<br>';
-show_indexed_item($number_array, 5);
-echo'<br>';
-show_array_with_index($number_array);
-echo'<br>';
-
-print_r(array_splice($number_array,0,1));
-
 echo'<pre>';
 print_r($number_array);
-echo'<pre>';
+echo'<pre>'; 
+
+function last_Element ($arr) {
+  $array_total_index = count($arr) - 1;
+  // echo $array_total_index;
+  
+  for ($n=$array_total_index; $n >=0 ; $n--) { 
+     $temp_array = $arr[$n] ;
+     echo $temp_array;
+    //  return $temp_array;
+  }
+  
+}
+
+last_Element($number_array);
+echo'<br>';
+
+function min_max ($arr ){
+  $str_item = [];
+  $str_len  = '';
+  $minimun_value = 0;
+  $maximun_value = 0;
+  for ($a=0; $a <count($arr) ; $a++) { 
+    $str_len = strlen($arr[$a]);
+      array_push($str_item, $str_len);
+  }
+
+  print_r($str_item);
+  $min = min($str_item);
+  $max = max($str_item);
+  $maximun_value = $arr[array_search($max,$str_item)];
+  $minimun_value = $arr[array_search($min, $str_item)];
+ 
+  $value = [ $minimun_value, $maximun_value] ;
+  var_dump($value);
+  return $value;
+
+
+};
+
+min_max($indexed_array);
+echo'<br>';
