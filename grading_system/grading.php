@@ -122,7 +122,7 @@ function get_grade_by_custom_function ($number) {
     $result = "D+";
     $great = 1.50;
   }
-  else if ($number >=60 and $number <65){
+  else if ($number >=60 and $number <=65){
 
     $result = "D";
     $great = 1.00;

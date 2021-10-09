@@ -159,13 +159,12 @@ function print_v ($item) {
 //to ser array spacepic item
 function show_indexed_item ($m_array, $index) {
   echo "<br>";
-  // if (in_array($index, $m_array)) {
-  //   echo "$index indexed item is:  $m_array[$index]" ;
-  // } else {
-  //   echo "$index index not abailavle in array.";
-  // };
-  
-  echo "$index index is : $m_array[$index]";
+  if (in_array($index, $m_array)) {
+    echo "$index indexed item is:  $m_array[$index]" ;
+  } else {
+    echo "$index index not abailavle in array.";
+  };
+  echo "$index index is : $m_array[$index] .<br>";
 };
 
 function show_array_item ($m_array) {
