@@ -48,12 +48,15 @@ function delete_item_from_array ($arr, $index) {
   };
 };
 
-function min_max ($arr ){
+function min_max ($arr){
   $str_item = [];
   $str_len  = '';
   $minimun_value = 0;
   $maximun_value = 0;
+
+
   for ($a=0; $a <count($arr) ; $a++) { 
+
     $str_len = strlen($arr[$a]);
       array_push($str_item, $str_len);
   }

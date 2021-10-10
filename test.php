@@ -147,46 +147,91 @@ echo "<br>";
 echo "hello ";
 $number_array = [1,2,3,4,5,6,7,8,9];
 echo'<pre>';
-print_r($number_array);
+// print_r($number_array);
 echo'<pre>'; 
 
 function last_Element ($arr) {
-  $array_total_index = count($arr) - 1;
-  // echo $array_total_index;
+  // $array_total_index = count($arr) - 1;
+  // // echo $array_total_index;
   
-  for ($n=$array_total_index; $n >=0 ; $n--) { 
-     $temp_array = $arr[$n] ;
-     echo $temp_array;
-    //  return $temp_array;
-  }
+  // for ($n=$array_total_index; $n >=0 ; $n--) { 
+  //    $temp_array = $arr[$n] ;
+  //    echo $temp_array;
+  //   //  return $temp_array;
+  // }
   
+  return array_reverse($arr);
 }
 
-last_Element($number_array);
+// print_r(last_Element($indexed_array));
+
+
+/*PHP advanced*/ 
+/*Date and time */
+
+#"D" means weak day;
+// date_default_timezone_set("Bangladesh");
+echo'<br>';
+print_r("'D' means weak day: " .date("D"));
 echo'<br>';
 
-function min_max ($arr ){
-  $str_item = [];
-  $str_len  = '';
-  $minimun_value = 0;
-  $maximun_value = 0;
-  for ($a=0; $a <count($arr) ; $a++) { 
-    $str_len = strlen($arr[$a]);
-      array_push($str_item, $str_len);
-  }
-
-  print_r($str_item);
-  $min = min($str_item);
-  $max = max($str_item);
-  $maximun_value = $arr[array_search($max,$str_item)];
-  $minimun_value = $arr[array_search($min, $str_item)];
- 
-  $value = [ $minimun_value, $maximun_value] ;
-  var_dump($value);
-  return $value;
-
-
-};
-
-min_max($indexed_array);
+#"M" means current month;
 echo'<br>';
+print_r("'M' means name of current month: " .date("M"));
+echo'<br>';
+
+#"Y" means full years;
+echo'<br>';
+print_r("'Y' means full year: " .date("Y"));
+echo'<br>';
+
+#"d" means current date of month;
+echo'<br>';
+print_r("'d' means current data of month: ". date("d"));
+echo'<br>';
+
+#"m" means number of month;
+echo'<br>';
+print_r("'m' means numer of month : " .date("m"));
+echo'<br>';
+
+#"y" means number of year;
+echo'<br>';
+print_r("'y' means just year :". date("y"));
+echo'<br>';
+echo'<br>';
+
+print_r("Today is :" .date("d-M-Y-D")."day");
+echo'<br>';
+
+#Time setting
+#"H" means 0-24 Hour
+echo'<br>';
+print_r("current time is: " .date("H"));
+echo'<br>';
+
+#"h" means 12-hour formate of an hour with leading 0-12
+
+$tomorrow = strtotime("+12 Weeks");
+echo'<br>';
+print_r(date("d-M-Y l",$tomorrow));
+echo'<br>';
+
+$to_day = strtotime("sunday");
+$end_day = strtotime("+6 weeks", $to_day);
+// $next_6_weeks = strtotime("+6 weeks", $to_day);
+
+echo "next 6 sunday : <br>";
+echo "<table> 
+  <tr>
+    <td> A/C Holder Name : Rahimunesa </td>
+    <td> A/C Status : Sving </td>
+    <td> H_Name : A. Rahim </td>
+  </tr>
+</table>";
+echo '<table border="1"> <tr> <td colspan="3">start:'.date("d/M/Y").'</td> <td colspan="3">End:'.date("d/M/Y", $end_day).'</td> </tr> <tr">';
+while ($to_day < $end_day) {
+  echo'<td>' .date("d- M ", $to_day) ."<br>".'</td>';
+  $to_day = strtotime("+1 weeks", $to_day);
+}
+echo '<tr> <tr> <td><input type="text" style="width:100px"></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr></table';
