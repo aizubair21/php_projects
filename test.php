@@ -144,7 +144,7 @@ echo "<br>";
 
 // include("custom_function.php");
 
-echo "hello ";
+// echo "hello ";
 $number_array = [1,2,3,4,5,6,7,8,9];
 echo'<pre>';
 // print_r($number_array);
@@ -171,67 +171,80 @@ function last_Element ($arr) {
 
 #"D" means weak day;
 // date_default_timezone_set("Bangladesh");
-echo'<br>';
-print_r("'D' means weak day: " .date("D"));
-echo'<br>';
+// echo'<br>';
+// print_r("'D' means weak day: " .date("D"));
+// echo'<br>';
 
-#"M" means current month;
-echo'<br>';
-print_r("'M' means name of current month: " .date("M"));
-echo'<br>';
+// #"M" means current month;
+// echo'<br>';
+// print_r("'M' means name of current month: " .date("M"));
+// echo'<br>';
 
-#"Y" means full years;
-echo'<br>';
-print_r("'Y' means full year: " .date("Y"));
-echo'<br>';
+// #"Y" means full years;
+// echo'<br>';
+// print_r("'Y' means full year: " .date("Y"));
+// echo'<br>';
 
-#"d" means current date of month;
-echo'<br>';
-print_r("'d' means current data of month: ". date("d"));
-echo'<br>';
+// #"d" means current date of month;
+// echo'<br>';
+// print_r("'d' means current data of month: ". date("d"));
+// echo'<br>';
 
-#"m" means number of month;
-echo'<br>';
-print_r("'m' means numer of month : " .date("m"));
-echo'<br>';
+// #"m" means number of month;
+// echo'<br>';
+// print_r("'m' means numer of month : " .date("m"));
+// echo'<br>';
 
-#"y" means number of year;
-echo'<br>';
-print_r("'y' means just year :". date("y"));
-echo'<br>';
-echo'<br>';
+// #"y" means number of year;
+// echo'<br>';
+// print_r("'y' means just year :". date("y"));
+// echo'<br>';
+// echo'<br>';
 
-print_r("Today is :" .date("d-M-Y-D")."day");
-echo'<br>';
+// print_r("Today is :" .date("d-M-Y-D")."day");
+// echo'<br>';
 
-#Time setting
-#"H" means 0-24 Hour
-echo'<br>';
-print_r("current time is: " .date("H"));
-echo'<br>';
+// #Time setting
+// #"H" means 0-24 Hour
+// echo'<br>';
+// print_r("current time is: " .date("H"));
+// echo'<br>';
 
-#"h" means 12-hour formate of an hour with leading 0-12
+// #"h" means 12-hour formate of an hour with leading 0-12
 
-$tomorrow = strtotime("+12 Weeks");
-echo'<br>';
-print_r(date("d-M-Y l",$tomorrow));
-echo'<br>';
+// $tomorrow = strtotime("+12 Weeks");
+// echo'<br>';
+// print_r(date("d-M-Y l",$tomorrow));
+// echo'<br>';
 
-$to_day = strtotime("sunday");
-$end_day = strtotime("+6 weeks", $to_day);
-// $next_6_weeks = strtotime("+6 weeks", $to_day);
+// $to_day = strtotime("sunday");
+// $end_day = strtotime("+6 weeks", $to_day);
+// // $next_6_weeks = strtotime("+6 weeks", $to_day);
 
-echo "next 6 sunday : <br>";
-echo "<table> 
-  <tr>
-    <td> A/C Holder Name : Rahimunesa </td>
-    <td> A/C Status : Sving </td>
-    <td> H_Name : A. Rahim </td>
-  </tr>
-</table>";
-echo '<table border="1"> <tr> <td colspan="3">start:'.date("d/M/Y").'</td> <td colspan="3">End:'.date("d/M/Y", $end_day).'</td> </tr> <tr">';
-while ($to_day < $end_day) {
-  echo'<td>' .date("d- M ", $to_day) ."<br>".'</td>';
-  $to_day = strtotime("+1 weeks", $to_day);
-}
-echo '<tr> <tr> <td><input type="text" style="width:100px"></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr></table';
+// echo "next 6 sunday : <br>";
+// echo "<table> 
+//   <tr>
+//     <td> A/C Holder Name : Rahimunesa </td>
+//     <td> A/C Status : Sving </td>
+//     <td> H_Name : A. Rahim </td>
+//   </tr>
+// </table>";
+// echo '<table border="1"> <tr> <td colspan="3">start:'.date("d/M/Y").'</td> <td colspan="3">End:'.date("d/M/Y", $end_day).'</td> </tr> <tr">';
+// while ($to_day < $end_day) {
+//   echo'<td>' .date("d- M ", $to_day) ."<br>".'</td>';
+//   $to_day = strtotime("+1 weeks", $to_day);
+// }
+// echo '<tr> <tr> <td><input type="text" style="width:100px"></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr></table';
+
+$file = fopen("dictionary.txt", "r");
+$my_inpt = "amimul ihdan zubair\n";
+fwrite($file, $my_inpt);
+#end of file
+while (!feof($file)) {
+  $single_file = fgets($file, filesize("dictionary.txt"));
+  echo $single_file;
+
+} ;
+fclose($file);
+
+
