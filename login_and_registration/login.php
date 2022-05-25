@@ -60,6 +60,7 @@ if (isset($_POST["login"])) {
                     <form action="login.php" method="POST" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="form-floating mb-3">
+                            
                                     <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="user_name">
                                     <label for="floatingInput">User Name</label>
                                     <strong class="text text-danger">
@@ -88,7 +89,7 @@ if (isset($_POST["login"])) {
                                     <a href="register.php" class="text text-info">Register now !</a>
                                 </div>
                                 <div style="text-align:center; padding-bottom:5px">
-                                    <a href="#" class="text text-danger p-2"> Forgote Your Password ?</a>
+                                    <a href="forgot_password.php " class="text text-danger p-2"> Forgote Your Password ?</a>
                                 </div>
                             </div>
                         

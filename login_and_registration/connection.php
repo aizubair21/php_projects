@@ -16,3 +16,13 @@ function getData($key){
     }
 }
 
+function isInDatabase ($user_name) {
+    $conn = mysqli_connect('localhost','root','','user');
+    $data = "SELECT * FROM user WHERE user_name='$user_name'";
+    $result = mysqli_query($conn, $data);
+    if(mysqli_num_rows($result) > 0) {
+        return mysqli_fetch_assoc($result);
+       
+    }
+}
+
