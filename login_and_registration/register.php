@@ -1,8 +1,10 @@
 
 <?php
+
+require "nav.php";
 include 'connection.php';
 
-if (isset($_SESSION['id'])) {
+if (isset($_SESSION['key'])) {
     header("location: dashboard.php");
 }
 
@@ -47,9 +49,13 @@ if (isset($_POST['register'])) {
                 $password_error = "Password at lest 8 digit.";
             }else {
                $sql = "INSERT INTO user (name, user_name, email, phone, password) VALUES ('$name','$user_name','$email','$phone','$password')";
+                $_SESSION["register"] = "register";
+                header("localtion: login.php");
                 if (mysqli_query($conn, $sql)) {
-                    $_SESSION['id'] = $row['id'];
-                    header("localtion: dahboard.php");
+                    $name = '';
+                    $user_name = '';
+                    $email = '';
+                    $phone = '';
                 }
 
             }
@@ -69,9 +75,7 @@ if (isset($_POST['register'])) {
     <title>Document</title>
 </head>
 <body>
-    <?php
-        require "nav.php";
-    ?>
+
 
     <div class="main_body" >
        <div class="container">
@@ -84,7 +88,14 @@ if (isset($_POST['register'])) {
                     <div class="bg-primary text-white p-3" style="font-size:20px; text-align:center; font-weight:bold">
                         register as new
                     </div>
-                        <div class="card-body">
+                    <?php if(isset($_SESSION['register'])) { ?>
+                        <div class="alert alert-success">
+                            <p>Register success. <a href="login.php">Login Now</a></p>
+                        </div>
+                    <?php }else {?>
+
+                   
+                    <div class="card-body">
 
                         <form action="register.php" method="post" enctype="multipart/form-data">
                             <div class="input-group d-flex justify-content-between ">
@@ -148,7 +159,7 @@ if (isset($_POST['register'])) {
 
                             <div class="d-flex justify-content-between align-items-baseline">
                                 <a class="btn btn-danger" href="index.php">Cancel</a>
-                               <button type="submit" name="register" class="btn btn-primary">Register</button>
+                               <button name="register" class="btn btn-primary">Register</button>
                             </div>
 
                         </form>
@@ -161,6 +172,9 @@ if (isset($_POST['register'])) {
                             <a href="login.php" class="text text-info">Login Now !</a>
                         </div>
                     </div>
+                    <?php 
+                        }
+                    ?>
                 </div>
             </div>
        </div>

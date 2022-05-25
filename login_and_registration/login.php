@@ -1,8 +1,9 @@
 
 <?php
+ require "nav.php";
 
 
-if (isset($_SESSION['id'])) {
+if (isset($_SESSION['key'])) {
     header("location: dashboard.php");
 }
 
@@ -20,7 +21,7 @@ if (isset($_POST["login"])) {
     if(mysqli_num_rows($result) > 0){
        if(password_verify($password,$row['password'])) {
 
-           $_SESSION['id'] = $row['id'];
+           $_SESSION['key'] = $row['id'];
            header("location: dashboard.php");
 
        }else {
@@ -43,9 +44,7 @@ if (isset($_POST["login"])) {
     <title>Document</title>
 </head>
 <body>
-    <?php
-        require "nav.php";
-    ?>
+
 
     <div class="main_body" >
        <div class="container">

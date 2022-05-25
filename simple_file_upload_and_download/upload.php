@@ -2,7 +2,12 @@
 
 if (isset($_REQUEST["submit"])) {
 
-    if ($_FILES["upload_cv"]['name'] != '') {
+    
+    echo "<pre>";
+        print_r($_FILES["upload_cv"]);
+    echo "</pre>";
+    
+    if ($_FILES["upload_cv"]['name'] != ''){
 
         if ($_FILES['upload_cv']['type'] == 'application/pdf' ) {
            
@@ -27,6 +32,7 @@ if (isset($_REQUEST["submit"])) {
                 </script>
             <?php
         }
+
     }else {
         ?>
             <script>

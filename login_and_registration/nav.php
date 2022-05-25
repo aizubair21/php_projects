@@ -1,12 +1,7 @@
 <?php
-session_start();
-if (isset($_GET["logout"])) {
-    echo "log out";
-    session_destroy();
-    header("location: index.php");
-}
-
+    session_start();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,25 +23,35 @@ if (isset($_GET["logout"])) {
                     <a class="nav-link active" aria-current="page" href="index.php">home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="dashboard.php">dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php">login</a>
-                </li>
-                <?php if (isset($_SESSION['id'])) {
+               
+                <?php if (isset($_SESSION['key'])) {
                     ?>
                      <li class="nav-item">
                         <a class="nav-link" href="logout.php">Log out</a>
                     </li>
                     <?php
-                } ?>
+                }else {
+                    ?>
+                        <li class="nav-item">
+                        <a class="nav-link" href="login.php">login</a>
+                    </li>
+                    <?php
+                }  
+                
+                ?>
             </ul>
         </nav>
 
     </div>
+
+<pre>
+    <!-- <?php print_r($_SESSION); ?> -->
+</pre>
 
 
     <script src="bootstrap-5.1.0-dist/js/bootstrap.min.js"></script>
