@@ -84,16 +84,16 @@
         <div class="container">
             <ul class="nav justify-content-end p-3 text-black" style="">
                 <li class="nav-item">
-                    <a href="#" class="nav-link text-black font-bold active" aria-current="page" >Active</a>
+                    <a href="#" class="nav-link text-black font-bold active" aria-current="page" >Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link text-black font-bold" >Link</a>
+                    <a href="#" class="nav-link text-black font-bold" >Portfollio</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link text-black font-bold" >Link</a>
+                    <a href="#" class="nav-link text-black font-bold" >Resume</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link " style="border: 1px solid red; border-radius:25px; color:white;background-color:brown;">Download CV <i class="fas fa-file-download"></i> </a>
+                    <a href="download.php?file=my_cv.pdf" class="nav-link" style="border: 1px solid red; border-radius:25px; color:white;background-color:brown;">Download CV <i class="fas fa-file-download"></i> </a>
                 </li>
             </ul>
         </div>
@@ -110,7 +110,7 @@
                    <p style="padding:5px; font-size:40px;text-align:left; color:white; text-transform:capitalize; font-weight:800;">
                        I'm Here with two years of Development experience. 
                    </p>
-                   <a class="btn download_button" id="btn" style="float:left" href="#">View CV  </a>
+                   <a class="btn download_button" id="btn" target="_black" style="float:left" href="cv.pdf">View CV  </a>
  
                    
             </div>
