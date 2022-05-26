@@ -4,7 +4,7 @@
 
 
 if (isset($_SESSION['key'])) {
-    header("location: dashboard.php");
+    header("location: welcome.php");
 }
 
 require 'connection.php';
@@ -22,7 +22,7 @@ if (isset($_POST["login"])) {
        if(password_verify($password,$row['password'])) {
 
            $_SESSION['key'] = $row['id'];
-           header("location: dashboard.php");
+           header("location: welcome.php");
 
        }else {
            $pass_error = "Password not matched !";
