@@ -10,15 +10,7 @@
 </head>
 <body>
     <?php
-        require "nav.php";
+        require "welcome.php";
     ?>
-
-    <div class="main_body" >
-       <div class="container">
-            <div class="row" style="margin-top: 30px; padding:10px; ">
-                <div class="alert alert-info">This is landing pages</div>
-            </div>
-       </div>
-    </div>
 </body>
 </html>

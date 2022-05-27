@@ -2,6 +2,10 @@
     require "connection.php";
     include "nav.php";
 
+    if(!$_SESSION["key"]) {
+        header("location: login.php");
+    }
+
 
     $caption = $_POST["caption"] ?? "";
     $description = $_POST['description'] ?? "";
@@ -15,8 +19,10 @@
             
                 if (move_uploaded_file($_FILES["image"]["tmp_name"], "image/". $_FILES["image"]['name'])) {
                 
-                    $insert = "INSERT INTO crud (caption, description,  image) VALUES ('$caption','?$description','$image')";
+                    $insert = "INSERT INTO crud (caption, description,  image) VALUES ('$caption','$description','$image')";
                     if(mysqli_query($conn,$insert)){
+
+                        $_SESSION['status'] = "Successfully Inserted.";
                         header("location: dashboard.php");
                     }
 

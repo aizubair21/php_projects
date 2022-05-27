@@ -14,7 +14,7 @@
     <title>Home page </title>
     <style>
         .card-text {
-            line-height: 15px;
+            line-height: 18px;
         }
         .card {
             position: relative;
@@ -62,17 +62,17 @@
                 while ($row = mysqli_fetch_assoc($result)) {
                     ?>
 
-                        <div class="col-4">
+                        <div class="col-3 mb-3">
                             <div class="card">
                                 <div id="wrapper" class="d-flex justify-content-center align-items-center " >
                                     <div style="color:white; padding:15px;text-align:center">
                                         <strong>Today</strong><hr>
-                                        <a href="download.php" name="down" class="down_btn"><i class="fas fa-download"></i></a>
+                                        <a href="download.php?img=<?php echo $row['image'] ?>" name="down" class="down_btn"><i class="fas fa-download"></i></a>
                                     </div>
                                 </div>
                                 <img style="width: 100%; height:220px"  src="image/<?php echo $row['image']?>" alt="not fount">
                                 <div class="card-body bg-info">
-                                    <h2 class="card-title"><?php echo $row['caption']?></h2>
+                                    <strong class="card-title"><?php echo $row['caption']?></strong>
                                     <p class="card-text"><?php echo $row['description']?></p>
                                 </div>
                             </div>

@@ -25,6 +25,30 @@ $key = $_SESSION["key"] ?? "";
 
     <div class="main_body" >
        <div class="container">
+           <div style=" width:250px">
+                <div class="breadcrumb">
+                    <?php if(isset($_SESSION['status'])){ ?>
+                        
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong><?php echo $_SESSION['status']?></strong>
+                                <a href="unset_session.php" type="submit" class="btn btn-close" data-bs-dismiss="alert" aria-label="Close"></a>
+                            </div>
+                    
+                    <?php } ?>
+
+
+                    <?php if(isset($_SESSION['error'])){ ?>
+                        
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong><?php echo $_SESSION["error"] ?></strong>
+                            <a href="unset_session.php"  type="submit" class="btn btn-close" data-bs-dismiss="alert" aria-label="Close"></a>
+                        </div>
+                
+                <?php } ?>
+
+
+                </div>
+           </div>
             <div class="row" style="margin-top: 30px; padding:10px; ">
 
                 <div class="card">
@@ -63,7 +87,9 @@ $key = $_SESSION["key"] ?? "";
                                             <td>
                                                 <div class="d-flex justify-content-center align-items-center">
                                                         <a class="btn btn-primary btn-sm" href="update.php?uid=<?php echo $row["id"] ?>"><i class="fas fa-pen"></i></a>
-                                                        <a class="btn btn-danger btn-sm" href="delete.php?id=<?php echo $row['id'] ?>"><i class="fas fa-trash"></i></a>
+                                                        <form action="delete.php?id=<?php echo $row['id'] ?>" method="POST" enctype="multipart/form-data">
+                                                            <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                                        </form>
                                                 </div>
                                             </td>
                                         </tr>

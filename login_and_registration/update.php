@@ -4,6 +4,9 @@
 require "connection.php";
 include "nav.php";
 
+if(!$_SESSION["key"]) {
+    header("location: login.php");
+}
 
 
 //session_unset();
@@ -29,7 +32,8 @@ if (isset($_POST["submit"])) {
         if(mysqli_query($conn,$insert)){
             
             if (move_uploaded_file($_FILES["image"]["tmp_name"], "image/". $_FILES["image"]['name'])) {
-                
+            
+            $_SESSION['status'] = "Successfully Updated with Image Update. Your previous image has deleted from server !";    
             @unlink('image/'.$row["image"]);
             header("location: dashboard.php");
         }
@@ -39,6 +43,9 @@ if (isset($_POST["submit"])) {
         
         $insert = "UPDATE crud SET caption ='$caption', description='$description' WHERE id = $uid ";
         if(mysqli_query($conn,$insert)){
+
+            $_SESSION['status'] = "Successfully Updated";
+
             header("location: dashboard.php");
         }
     }
@@ -97,7 +104,7 @@ if (isset($_POST["submit"])) {
                                 </div><hr>
 
                                 <div class="d-flex justify-content-between align-items-baseline">
-                                    <a class="btn btn-danger" href="index.php">Cancel</a>
+                                    <a class="btn btn-danger" href="dashboard.php">Cancel</a>
                                     <strong>OR</strong>
                                     <button type="submit" name="submit"  class="btn btn-primary">Update</button>
                                 </div>

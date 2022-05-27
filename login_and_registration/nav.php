@@ -1,5 +1,13 @@
 <?php
     session_start();
+
+    function isActive ($modifier) {
+
+        $actual_link = $_SERVER['PHP_SELF'];
+        $modifie = "/$modifier/i";
+        return preg_match($modifie, $actual_link);
+
+    }
 ?>
 
 
@@ -19,17 +27,23 @@
         nav {
             background-color: rgba(0,0,0, 0.1);
         }
+        .nav {
+            padding: 5px 0px;
+        }
         .nav-link {
             color: black;
             font-size: 15px;
             font-weight: 500;
             text-transform: capitalize;
+
         }
         .active {
             color: green;
+            border: 1px solid green;
+            border-radius: 25px;
         }
         .default {
-            color: black;;
+            color: black;
         }
     </style>
     <div class="container">
@@ -40,11 +54,19 @@
                 <?php if (isset($_SESSION['key'])) {
                     ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="welcome.php">Welcome</a>
+                        <a class="nav-link <?php if(isActive('welcome.php')){ ?> active <?php } ?>" href="welcome.php">welcome</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard.php">Dashboard</a>
+                        <a class="nav-link <?php if(isActive('insert.php')){ ?> active <?php } ?>" href="insert.php">Insert</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link hide <?php if(isActive('update.php')){ ?> show active <?php } ?>" href="#">Update</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link <?php if(isActive('dashboard.php')){ ?> active <?php } ?>" href="dashboard.php">dashboard</a>
                     </li>
 
                     <li class="nav-item">
@@ -53,16 +75,13 @@
                     <?php
                 }else {
                     ?>
+
                     <li class="nav-item">
-                        <a class="nav-link active <?php if(basename(__FILE__) == "index.php") { ?> active <?php }else{ ?> default <?php } ?>" aria-current="page" href="index.php">home</a>
+                        <a class="nav-link <?php if(isActive('index.php')){ ?> active <?php } ?>" href="index.php">welcome</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link <?php if(basename(__FILE__) == "welcome.php") { ?> active <?php }else{ ?> default <?php } ?>" href="welcome.php">welcome</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.php">login</a>
+                        <a class="nav-link <?php if(isActive('login.php')){ ?> active <?php } ?>" href="login.php">login</a>
                     </li>
                     <?php
                 }  
