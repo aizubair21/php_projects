@@ -68,8 +68,8 @@ if (isset($_POST["submit"])) {
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4">
+            <div class="col-2"></div>
+            <div class="col-6">
                 <div class="card">
                 <div class="bg-primary text-white p-3" style="font-size:20px; text-align:center; font-weight:bold">
                         Update Data
@@ -84,7 +84,7 @@ if (isset($_POST["submit"])) {
 
                                 <div style="padding:3px 0px">
                                     <label for="previous_image">Previous image :</label><br>
-                                    <img width="100"  src="image/<?php echo $row['image'] ?>" alt="Not found!" name="previous_image" id="previous_image">
+                                    <img width="300"  src="image/<?php echo $row['image'] ?>" alt="Not found!" name="previous_image" id="previous_image">
                                 </div><br>
 
                                 <div>

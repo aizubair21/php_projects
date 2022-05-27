@@ -101,9 +101,11 @@ if(isset($_POST['reset']) && isset($_SESSION['is_confirm'])) {
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-3"></div>
+            <div class="col-3">
+                
+            </div>
             <div class="col-5">
-                <div class="card" style="margin-top: 20px;">
+                <div class="card">
                     <div class="bg-primary text-white p-3" style="font-size: 20px;">
                         Changer Your Password
                     </div>
