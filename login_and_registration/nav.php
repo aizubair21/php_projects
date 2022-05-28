@@ -66,6 +66,10 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link hide <?php if(isActive('users.php')){ ?> show active <?php } ?>" href="users.php">All user</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link <?php if(isActive('dashboard.php')){ ?> active <?php } ?>" href="dashboard.php">dashboard</a>
                     </li>
 
