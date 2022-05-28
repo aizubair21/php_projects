@@ -8,7 +8,7 @@ if ($key != "") {
     $user = "SELECT * FROM user WHERE id = $key";
     $result = mysqli_query($conn, $user);
     $row = mysqli_fetch_all($result);
-    if ($row["verify_at"] == !NULL) {
+    if (isset($row["verify_at"]) == NULL) {
         
         $id = $_SESSION["key"] ?? "";
         $row = getCurd("$id");
