@@ -1,13 +1,14 @@
 
 <?php
- require "nav.php";
+require 'connection.php';
+require "nav.php";
+include "auth.php";
 
 
 if (isset($_SESSION['key'])) {
     header("location: welcome.php");
 }
 
-require 'connection.php';
 $name_error = '';
 $pass_error = '';
 
@@ -78,6 +79,9 @@ if (isset($_POST["login"])) {
 
                                 <div>
                                     <button class="btn btn-primary btn-lg"  name="login" type="submit">Login</button>
+                                </div>
+                                <div class="p-2 w-100">
+                                    <a href="<?php echo $google_client->createAuthUrl()?>" class="btn btn-primary">Login via Google</a>
                                 </div>
 
 

@@ -1,5 +1,6 @@
 <?php
 
+
 $conn = mysqli_connect('localhost','root','','user');
 
 $key = $_SESSION["key"] ?? '';
