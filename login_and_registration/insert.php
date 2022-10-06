@@ -70,13 +70,6 @@
                 <div class="bg-primary text-white p-3" style="font-size:20px; text-align:center; font-weight:bold">
                         Insert Data
                     </div>
-                    <?php if(isset($_SESSION['register'])) { ?>
-                        <div class="alert alert-success">
-                            <p> Successfully Inserted Data . <a href="#">View All</a></p>
-                        </div>
-                    <?php }else {?>
-
-                   
                     <div class="card-body">
 
                         <form action="insert.php" method="post" enctype="multipart/form-data">
@@ -113,8 +106,6 @@
 
                         </form>
                     </div>
-
-                    <?php } ?>
                 </div>
             </div>
         </div>

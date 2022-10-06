@@ -1,6 +1,5 @@
 <?php
 include "function.php";
-require "connection.php";
 
 // function get_client(){
 //     $client = new Google_Client();

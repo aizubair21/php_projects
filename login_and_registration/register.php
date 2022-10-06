@@ -3,7 +3,7 @@
 
 require "nav.php";
 include 'connection.php';
-
+//session_unset();
 if (isset($_SESSION['key'])) {
     header("location: dashboard.php");
 }
@@ -49,13 +49,16 @@ if (isset($_POST['register'])) {
                 $password_error = "Password at lest 8 digit.";
             }else {
                $sql = "INSERT INTO user (name, user_name, email, phone, password) VALUES ('$name','$user_name','$email','$phone','$password')";
-                $_SESSION["register"] = "register";
-                header("localtion: login.php");
-                if (mysqli_query($conn, $sql)) {
+               if (mysqli_query($conn, $sql)) {
+                    $_SESSION["register"] = "register";
+                    header("location: login.php");
+
                     $name = '';
                     $user_name = '';
                     $email = '';
                     $phone = '';
+                }else{
+                    echo mysqli_error($conn);
                 }
 
             }

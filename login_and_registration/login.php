@@ -1,7 +1,7 @@
 
 <?php
 require 'connection.php';
-require "nav.php";
+include "nav.php";
 include "auth.php";
 
 
